@@ -1,10 +1,10 @@
-from django.urls import path
+from django.urls import include, path
 from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    #Предыдуший url входа
-    # path("login/", views.user_login, name="login"),
+#     Предыдуший url входа
+#     path("login/", views.user_login, name="login"),
 
     #url-адрес входа и выхода
     path("login/", auth_views.LoginView.as_view(), name="login"),
@@ -36,6 +36,9 @@ urlpatterns = [
     path('password-reset/complete/',
         auth_views.PasswordResetCompleteView.as_view(),
         name='password_reset_complete'),
+
+# Код выше можно было заменить на эту строчку:
+#     path("", include("django.contrib.auth.urls")),
 
     path("", views.dashboard, name="dashboard"),
 ]
