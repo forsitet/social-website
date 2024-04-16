@@ -118,6 +118,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -128,3 +131,4 @@ LOGIN_URL = "login" #определяет куда направлять, есл�
 LOGOUT_URL = "logout"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
