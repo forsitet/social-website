@@ -73,6 +73,7 @@ def edit(request):
         else:
             messages.error(request, "Error updating your profile")
     else:
+        # Через instance мы передаём форме экземпляры объектов (предзаполнение полей формы)
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
     
