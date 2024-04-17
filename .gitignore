@@ -1,0 +1,7 @@
+bookmarks/.env
+bookmarks/__pycache__
+cert.key
+cert.crt
+
+media/users
+.vscode
