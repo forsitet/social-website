@@ -1,11 +1,15 @@
 {% extends "base.html" %}
-
+{% load thumbnail %}
 {% block title %}{{ image.title }}{% endblock title %}
 
 {% block content %}
     <h1>{{ image.title }}</h1>
+    
     {% comment %} image.image.url - это относительный путь {% endcomment %}
-    <img src="{{ image.image.url }}" class="image-detail">
+    <a href="{{ image.image.url }}">
+        <img src="{% thumbnail image.image 300x0 quality=100 %}" class="image-detail">
+    </a>
+
     {% with total_likes=image.users_like.count %}
         <div class="image-info">
             <div>

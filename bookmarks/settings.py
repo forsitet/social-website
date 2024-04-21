@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
     "social_django",
     "django_extensions",
-    "easy_thumbnails",
+    "easy_thumbnails", #для миниатюр
     
     "images.apps.ImagesConfig",
 ]
