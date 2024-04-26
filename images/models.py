@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from django.utils.text import slugify
+from pytils.translit import slugify
 
 
 class Image(models.Model):

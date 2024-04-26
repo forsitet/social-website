@@ -1,7 +1,7 @@
 from django import forms
 from .models import Image
 from django.core.files.base import ContentFile
-from django.utils.text import slugify
+from pytils.translit import slugify
 import requests
 
 
