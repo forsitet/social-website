@@ -45,7 +45,8 @@ def dashboard(request):
     if following_ids:
         # Если пользователь подписан на других, то извлечь только их действия
         actions = actions.filter(user_id__in=following_ids)
-    actions = actions[:10]
+    # Операция соеднинеия на таблице Profile
+    actions = actions.select_related("user", "user__profile")[:10].prefetch_related("target")[:10]
     
     return render(request, 
                   "account/dashboard.html",
@@ -63,6 +64,7 @@ def register(request):
             new_user.set_password(user_form.cleaned_data["password"])
             #Сохранить пароль
             new_user.save()
+            
             #Создать профиль пользователя
             Profile.objects.create(user=new_user)
             create_action(new_user, "has created an account")
