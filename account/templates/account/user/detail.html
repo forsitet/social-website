@@ -8,11 +8,7 @@
     <h1>{{ user.get_full_name }}</h1>
 
     <div class="profile-info">
-        {% if user.profile.photo %}
             <img src={% thumbnail user.profile.photo 180x180 %} class="user-detail">
-        {% else %}
-            {% comment %}  {% endcomment %}
-        {% endif %}
     </div>
 
     {% with total_followers=user.followers.count %}
